@@ -1,0 +1,174 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(196, 184, 184);
+}
+h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* Encabezados h2 con líneas a ambos lados (el divisor "rodea" el h2) */
+fieldset h2{
+    position: relative;
+    text-align: center;
+    margin: 24px auto;
+    display: block;
+    z-index: 1;
+    background: transparent;
+    padding: 0 12px; /* espacio alrededor del texto para que no toque las líneas */
+}
+
+fieldset h2::before,
+fieldset h2::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 36%;
+    height: 2px;
+    background: rgba(0,0,0,0.55);
+    transform: translateY(-50%);
+}
+
+fieldset h2::before{ left: 0; }
+fieldset h2::after{ right: 0; }
+
+fieldset{
+    max-width: auto;
+    text-align: start;
+    border: 5px solid black;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e7dbbe;
+}
+.divisor{
+    /* Línea principal: degradado horizontal, altura reducida y margen */
+    height: 6px;
+    margin: 18px auto;
+    max-width: 320px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.15), rgba(0,0,0,0.6), rgba(0,0,0,0.15));
+    position: relative;
+}
+
+.divisor::after{
+    /* Ornamento central: pequeño círculo con borde y sombra */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #e7dbbe; /* matching fieldset background */
+    border: 2px solid rgba(0,0,0,0.6);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+.alergenos{
+    list-style-type: none;
+    display: inline-block;
+    justify-content: space-between;
+    padding: 10%;
+    gap: 2rem;
+}
+
+.alergenosfoto{
+    width: 40px;
+    height: 40px;
+    margin: 0.25rem;
+}
+/* Iconos más pequeños cuando están dentro de un <li> de menú */
+fieldset ul:not(.alergenos) li .alergenosfoto{
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+.hr.divisor2, .divisor2, hr.divisor2{
+    /* Variante más discreta: doble línea sutil */
+    /* ahora ocupa todo el ancho del fieldset (hr o div) */
+    box-sizing: border-box;
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 14px;
+    margin: 8px 0;
+    position: relative;
+    border: 0; /* eliminar borde por defecto de hr */
+    background: transparent;
+}
+
+.divisor2::before,
+.divisor2::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(0,0,0,0.45);
+}
+
+.divisor2::before{ top: 2px; }
+.divisor2::after{ bottom: 2px; }
+/* Layout de los items del menú: texto a la izquierda, precio a la derecha */
+fieldset ul:not(.alergenos) li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+}
+/* El contenedor del precio (alineado a la derecha) */
+.precio{
+    font-weight: bold;
+    min-width: 70px;
+    text-align: right;
+    font-weight: 600;
+    margin-left: auto;
+}
+/* Asegurar que los iconos y el texto estén agrupados a la izquierda */
+/* Agrupar el texto y sus iconos en un contenedor a la izquierda */
+/* deja un espacio entre el bloque de texto+iconos y el precio (controlado por flex y .precio) */
+.category-list{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.category-list button{
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e7dbbe;
+    color: black;
+    cursor: pointer;
+}
+.category-btn.active {
+  background-color: #dc3545; /* rojo de alerta */
+  color: white;
+  border-color: #b02a37;
+}
+
+@media screen and (max-width: 768px){
+    fieldset{
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+    .precio{
+        min-width: 50px;
+        font-size: 0.9rem;
+    }
+}
+
+

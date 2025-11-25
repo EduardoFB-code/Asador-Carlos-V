@@ -1,0 +1,63 @@
+fieldset{
+    margin: 20px;
+    padding: 10px;
+    border: 3px solid rgba(168, 109, 20, 0.486);
+    border-radius: 10px;
+    background-color: #e7dbbe;
+    text-align: center;
+}
+.divisor{
+    /* Línea principal: degradado horizontal, altura reducida y margen */
+    height: 6px;
+    margin: 18px auto;
+    max-width: 320px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.15), rgba(0,0,0,0.6), rgba(0,0,0,0.15));
+    position: relative;
+}
+
+.divisor::after{
+    /* Ornamento central: pequeño círculo con borde y sombra */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #e7dbbe; /* matching fieldset background */
+    border: 2px solid rgba(0,0,0,0.6);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+h3{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.reserva{
+    text-align: center;
+    margin-top: 20px;
+    color: #e7dbbe;
+}
+
+.reserva button{
+    background-color: #a86d14;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserva p{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.introduccion{
+    text-align: center;
+    color: #e7dbbe;
+    margin-bottom: 30px;
+}

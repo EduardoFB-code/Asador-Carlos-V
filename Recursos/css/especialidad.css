@@ -1,0 +1,27 @@
+fieldset{
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid rgba(168, 109, 20, 0.486);
+    border-radius: 10px;
+    background-color: #e7dbbe;
+    text-align: center;
+}
+
+fieldset img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+@media screen and (max-width: 768px){
+    fieldset{
+        margin: 10px;
+        padding: 10px;
+    }
+    fieldset img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
