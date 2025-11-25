@@ -1,0 +1,18 @@
+[build]
+  # Publish the root directory as-is (static HTML files)
+  publish = "."
+  # No build command needed for static HTML
+  command = ""
+
+# Headers for proper caching and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+# Cache static assets
+[[headers]]
+  for = "/Recursos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
