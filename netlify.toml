@@ -1,6 +1,6 @@
 [build]
   # Publish the root directory as-is (static HTML files)
-  publish = "."
+  publish = "https://github.com/EduardoFB-code/Asador-Carlos-V"
   # No build command needed for static HTML
   command = ""
 
